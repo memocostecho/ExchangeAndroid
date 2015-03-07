@@ -100,13 +100,18 @@ public class LoginFragment extends Fragment {
         authButton.setFragment(this);
         authButton.setUserInfoChangedCallback(new LoginButton.UserInfoChangedCallback() {
 
+
+
+
             @Override
 
             public void onUserInfoFetched(GraphUser user) {
 
                 if (user != null) {
 
-                    Log.d("Log in", "Logged in as "+user.getProperty("email"));
+                    Log.d("Log in", "Logged in as " + user.getProperty("email"));
+                    Intent intent = new Intent(getActivity(),MainActivity.class);
+                    startActivity(intent);
 
                 } else {
 
